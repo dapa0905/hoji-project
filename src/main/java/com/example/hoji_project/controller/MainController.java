@@ -10,5 +10,10 @@ public class MainController {
   public String loginPage() {
     return "index";
   }
+  
+  @GetMapping("/member/login")
+  public String MemberloginPage() {
+    return "member/login";
+  }
 
 }
