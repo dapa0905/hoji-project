@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import com.example.hoji_project.model.OAuthAttributes;
 import com.example.hoji_project.model.UserDTO;
 import com.example.hoji_project.model.UserEntity;
-import com.example.hoji_project.repository.UserRepository;
+import com.example.hoji_project.repository.MemberRepository;
 import jakarta.servlet.http.HttpSession;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -22,7 +22,7 @@ import lombok.RequiredArgsConstructor;
 @Transactional
 public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequest, OAuth2User> {
   
-  private final UserRepository userRepository;
+  private final MemberRepository userRepository;
   private final HttpSession httpSession;
   
   @Override

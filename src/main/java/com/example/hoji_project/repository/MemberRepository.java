@@ -4,8 +4,10 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import com.example.hoji_project.model.UserEntity;
 
-public interface UserRepository extends JpaRepository<UserEntity, Long>{
+public interface MemberRepository extends JpaRepository<UserEntity, Long>{
   
   Optional<UserEntity> findByEmail(String email);
+  
+  Optional<UserEntity> findByName(String name);
   
 }
