@@ -6,8 +6,10 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -17,6 +19,7 @@ public class SignUpDTO {
   private String password;
   private String email;
   private String picture;
+  private UserRole userRole; 
   private List<String> roles = new ArrayList<>();
   
   public UserEntity toEntity(String encodedPassword, List<String> roles) {
@@ -25,6 +28,8 @@ public class SignUpDTO {
         .password(encodedPassword)
         .email(email)
         .picture(picture)
+        .userRole(userRole)
         .build();
   }
+  
 }

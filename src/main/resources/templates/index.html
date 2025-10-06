@@ -1,164 +1,197 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Login Page</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Login Page</title>
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-  <style>
-    body {
-      background-color: #f8f9fa; /* 연한 회색 */
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-    }
+	<style>
+		body {
+			background-color: #f8f9fa;
+			/* 연한 회색 */
+			height: 100vh;
+			align-items: center;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			margin: 0;
+		}
 
-    .login-card {
-      background-color: #ffffff; /* 흰색 */
-      padding: 2.5rem 3rem;
-      border-radius: 0.75rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-      width: 100%;
-      max-width: 420px;
-      transition: transform 0.3s ease;
-    }
-    .login-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
-    }
+		.login-card {
+			background-color: #ffffff;
+			/* 흰색 */
+			padding: 2.5rem 3rem;
+			border-radius: 0.75rem;
+			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+			width: 100%;
+			max-width: 420px;
+			transition: transform 0.3s ease;
+		}
 
-    .login-card h2 {
-      margin-bottom: 2rem;
-      font-weight: 700;
-      color: #212529; /* 거의 검정 */
-      text-align: center;
-      letter-spacing: 1.2px;
-      user-select: none;
-    }
+		.login-card:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+		}
 
-    .form-label {
-      color: #495057; /* 어두운 회색 */
-      font-weight: 600;
-      user-select: none;
-    }
+		.login-card h2 {
+			margin-bottom: 2rem;
+			font-weight: 700;
+			color: #212529;
+			/* 거의 검정 */
+			text-align: center;
+			letter-spacing: 1.2px;
+			user-select: none;
+		}
 
-    .form-control {
-      border: 1.5px solid #ced4da;
-      padding: 0.6rem 0.9rem;
-      font-size: 1.05rem;
-      color: #212529;
-      background-color: #fefefe;
-      border-radius: 0.5rem;
-      transition: border-color 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: none;
-    }
+		.form-label {
+			color: #495057;
+			/* 어두운 회색 */
+			font-weight: 600;
+			user-select: none;
+		}
 
-    .form-control:focus {
-      border-color: #495057;
-      box-shadow: 0 0 0 0.3rem rgba(73, 80, 87, 0.3);
-      outline: none;
-    }
+		.form-control {
+			border: 1.5px solid #ced4da;
+			padding: 0.6rem 0.9rem;
+			font-size: 1.05rem;
+			color: #212529;
+			background-color: #fefefe;
+			border-radius: 0.5rem;
+			transition: border-color 0.3s ease, box-shadow 0.3s ease;
+			box-shadow: none;
+		}
 
-    .btn-login {
-      width: 100%;
-      padding: 0.65rem;
-      background-color: #212529; /* 거의 검정 */
-      border: none;
-      color: white;
-      font-weight: 700;
-      font-size: 1.15rem;
-      border-radius: 0.5rem;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-      user-select: none;
-      box-shadow: 0 4px 10px rgba(33, 37, 41, 0.25);
-    }
+		.form-control:focus {
+			border-color: #495057;
+			box-shadow: 0 0 0 0.3rem rgba(73, 80, 87, 0.3);
+			outline: none;
+		}
 
-    .btn-login:hover {
-      background-color: #495057; /* 짙은 회색 */
-      box-shadow: 0 6px 15px rgba(73, 80, 87, 0.4);
-    }
+		.btn-login {
+			width: 100%;
+			padding: 0.65rem;
+			background-color: #212529;
+			/* 거의 검정 */
+			border: none;
+			color: white;
+			font-weight: 700;
+			font-size: 1.15rem;
+			border-radius: 0.5rem;
+			transition: background-color 0.3s ease, box-shadow 0.3s ease;
+			cursor: pointer;
+			user-select: none;
+			box-shadow: 0 4px 10px rgba(33, 37, 41, 0.25);
+		}
 
-    .btn-register {
-      width: 100%;
-      padding: 0.6rem;
-      margin-top: 0.8rem;
-      background-color: transparent;
-      border: 2px solid #212529;
-      color: #212529;
-      font-weight: 700;
-      font-size: 1.1rem;
-      border-radius: 0.5rem;
-      transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-      user-select: none;
-      box-shadow: none;
-    }
+		.btn-login:hover {
+			background-color: #495057;
+			/* 짙은 회색 */
+			box-shadow: 0 6px 15px rgba(73, 80, 87, 0.4);
+		}
 
-    .btn-register:hover {
-      background-color: #212529;
-      color: white;
-      box-shadow: 0 6px 15px rgba(33, 37, 41, 0.4);
-    }
+		.btn-register {
+			width: 100%;
+			padding: 0.6rem;
+			margin-top: 0.8rem;
+			background-color: transparent;
+			border: 2px solid #212529;
+			color: #212529;
+			font-weight: 700;
+			font-size: 1.1rem;
+			border-radius: 0.5rem;
+			transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+			cursor: pointer;
+			user-select: none;
+			box-shadow: none;
+		}
 
-    .btn-google-login {
-      display: inline-block;
-      margin-top: 1rem;
-      width: 100%;
-      padding: 0.6rem;
-      background-color: #4285F4; /* 구글 블루 */
-      border: none;
-      color: white;
-      font-weight: 600;
-      font-size: 1.05rem;
-      border-radius: 0.5rem;
-      text-align: center;
-      text-decoration: none;
-      user-select: none;
-      box-shadow: 0 4px 10px rgba(66, 133, 244, 0.5);
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-    }
+		.btn-register:hover {
+			background-color: #212529;
+			color: white;
+			box-shadow: 0 6px 15px rgba(33, 37, 41, 0.4);
+		}
 
-    .btn-google-login:hover {
-      background-color: #3367D6;
-      box-shadow: 0 6px 15px rgba(51, 103, 214, 0.7);
-      text-decoration: none;
-      color: white;
-    }
+		.btn-google-login {
+			display: inline-block;
+			margin-top: 1rem;
+			width: 100%;
+			padding: 0.6rem;
+			background-color: #4285F4;
+			/* 구글 블루 */
+			border: none;
+			color: white;
+			font-weight: 600;
+			font-size: 1.05rem;
+			border-radius: 0.5rem;
+			text-align: center;
+			text-decoration: none;
+			user-select: none;
+			box-shadow: 0 4px 10px rgba(66, 133, 244, 0.5);
+			transition: background-color 0.3s ease, box-shadow 0.3s ease;
+			cursor: pointer;
+		}
 
-    .form-group + .form-group {
-      margin-top: 1.2rem;
-    }
-  </style>
+		.btn-google-login:hover {
+			background-color: #3367D6;
+			box-shadow: 0 6px 15px rgba(51, 103, 214, 0.7);
+			text-decoration: none;
+			color: white;
+		}
+
+		.form-group+.form-group {
+			margin-top: 1.2rem;
+		}
+	</style>
 </head>
-<body>
-  <div class="login-card shadow-sm">
-    <h2>로그인</h2>
-    <form action="/login" method="post" autocomplete="off">
-      <div class="form-group mb-3">
-        <label for="username" class="form-label">아이디</label>
-        <input type="text" class="form-control" id="username" name="username" placeholder="아이디를 입력하세요" required />
-      </div>
-      <div class="form-group mb-4">
-        <label for="password" class="form-label">비밀번호</label>
-        <input type="password" class="form-control" id="password" name="password" placeholder="비밀번호를 입력하세요" required />
-      </div>
 
-      <button type="submit" class="btn-login">로그인</button>
-      <button type="button" class="btn-register" onclick="location.href='member/register'">회원가입</button>
+<body style="margin: 0; background-color: #f8f9fa; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+  <!-- 네비게이션 바: 항상 최상단에 위치 -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">RandomBox</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/chat/chatMain">Chat</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-      <a href="/oauth2/authorization/google" class="btn-google-login">Google 로그인</a>
-    </form>
+  <!-- 로그인 카드만 별도 wrapper 안에서 가운데 정렬 -->
+  <div class="d-flex justify-content-center align-items-center" style="min-height: calc(100vh - 56px);">
+    <div class="login-card shadow-sm container" style="max-width: 400px;">
+      <h2 class="text-center mb-4">로그인</h2>
+      <form action="/login" method="post" autocomplete="off">
+        <div class="form-group mb-3">
+          <label for="username" class="form-label">아이디</label>
+          <input type="text" class="form-control" id="username" name="username" placeholder="아이디를 입력하세요" required />
+        </div>
+        <div class="form-group mb-4">
+          <label for="password" class="form-label">비밀번호</label>
+          <input type="password" class="form-control" id="password" name="password" placeholder="비밀번호를 입력하세요" required />
+        </div>
+
+        <div class="d-grid gap-2 mb-3">
+          <button type="submit" class="btn btn-primary">로그인</button>
+          <button type="button" class="btn btn-outline-secondary" onclick="location.href='member/register'">회원가입</button>
+        </div>
+
+        <div class="text-center">
+          <a href="/oauth2/authorization/google" class="btn btn-danger w-100">Google 로그인</a>
+        </div>
+      </form>
+    </div>
   </div>
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
